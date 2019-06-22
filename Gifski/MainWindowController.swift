@@ -80,7 +80,9 @@ final class MainWindowController: NSWindowController {
 			$0.titlebarAppearsTransparent = true
 			$0.isMovableByWindowBackground = true
 			$0.isRestorable = false
-			$0.makeVibrant()
+			$0.contentView!.wantsLayer = true
+			$0.contentView!.layer!.contents = NSImage(named: "BackgroundImage")!
+			//$0.makeVibrant()
 		}
 
 		view?.addSubview(circularProgress)
